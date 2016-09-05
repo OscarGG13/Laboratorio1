@@ -200,21 +200,21 @@ public class Problema5{
     
     public static int pagarReserva(int[][] reservas,int totalReservas,int[][] ventas,int totalVentas,int[][] tarjetas,int totalTarjetas)
     {
-        System.out.println("pagar por:");
+        System.out.println("Pagar por:");
         System.out.println("1. Codigo Reserva");
         System.out.println("2. numero de tarjeta");
         Scanner in= new Scanner(System.in);
         int opcion=in.nextInt();
         if(opcion==1)
         {
-            System.out.println("Ingrese codigo de reserva");
+            System.out.println("Digite codigo");
             in= new Scanner(System.in);
             int codigo=in.nextInt();
             return pagarReservaCodigo(reservas,totalReservas,ventas,totalVentas,codigo,tarjetas,totalTarjetas);
         }
         else if(opcion==2)
         {
-            System.out.println("Ingrese numero de tarjeta");
+            System.out.println("Digite numero de tarjeta");
             in= new Scanner(System.in);
             int numero=in.nextInt();
             return pagarReservaNumero(reservas,totalReservas,ventas,totalVentas,numero,tarjetas,totalTarjetas);
@@ -224,11 +224,11 @@ public class Problema5{
     
     public static int pagarReservaCodigo(int[][] reservas,int totalReservas,int[][] ventas,int totalVentas, int codigo,int[][] tarjetas,int totalTarjetas)
     {
-        System.out.println("Detalles del pago:");
+        System.out.println("Detalles pago:");
         System.out.println("Cliente: "+reservas[codigo][0]);
         System.out.println("Numero Sillas: "+reservas[codigo][1]);
         System.out.println("Valor a pagar: "+(reservas[codigo][2]*0.9));
-        System.out.println("Ingrese: ");
+        System.out.println("Ingrese forma de pago: ");
         System.out.println("1. Pagar en efectivo");
         System.out.println("2. Pagar con tarjeta");
 
@@ -266,21 +266,21 @@ public class Problema5{
     
     public static void cancelarReserva(int[][] reservas,int totalReservas,int[][] sillas)
     {
-        System.out.println("cancelar por:");
+        System.out.println("Cancelar por:");
         System.out.println("1. Codigo Reserva");
         System.out.println("2. numero de tarjeta");
         Scanner in= new Scanner(System.in);
         int opcion=in.nextInt();
         if(opcion==1)
         {
-            System.out.println("Ingrese codigo de reserva");
+            System.out.println("Digite codigo");
             in= new Scanner(System.in);
             int codigo=in.nextInt();
             cancelarReservaCodigo(reservas,sillas,codigo);
         }
         else if(opcion==2)
         {
-            System.out.println("Ingrese numero de tarjeta");
+            System.out.println("Digite numero de tarjeta");
             in= new Scanner(System.in);
             int numero=in.nextInt();
             cancelarReservaNumero(reservas,totalReservas,sillas,numero);
@@ -335,20 +335,20 @@ public class Problema5{
         int [][] sillasUtilizadas;
         int columna;
         String fila;
-        System.out.println("Ingrese numero de cedula del cliente");
+        System.out.println("Numero de cedula del cliente: ");
         Scanner in= new Scanner(System.in);
         venta[0]=in.nextInt();
-        System.out.println("Ingrese el numero de sillas");
+        System.out.println("cantidad de sillas");
         in= new Scanner(System.in);
         venta[1]=in.nextInt();
         sillasUtilizadas= new int[venta[1]][2];
         int valorTotal=0;
         for(int i=0;i<venta[1];i++)
         {
-            System.out.println("Ingrese la fila a reservar");
+            System.out.println("Fila deseada");
             in= new Scanner(System.in);
             fila=in.next();
-            System.out.println("Ingrese la columna");
+            System.out.println("Columna deseada");
             in= new Scanner(System.in);
             columna=in.nextInt();
             columna--;
@@ -401,13 +401,13 @@ public class Problema5{
             }
             else
             {
-                System.out.println("silla ocupada");
+                System.out.println("Puesto ocupado");
                 i--;
             }
         } //ciclo for
         venta[2]=valorTotal;
         System.out.println("Valor Total: "+venta[2]);
-        System.out.println("tipo de pago:");
+        System.out.println("Forma de pago:");
         System.out.println("1. Efectivo.");
         System.out.println("2. Tarjeta.");
         in= new Scanner(System.in);
@@ -483,7 +483,7 @@ public class Problema5{
     }//menu
 
     public static void opcion_error(){
-        System.out.println("Opcion erronea");
+        System.out.println("Opcion no valida");
     }//error
 
     
