@@ -2,6 +2,16 @@ package laboratorio1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *Universidad Nacional de Colombia
+ * Programacion Orientada a objetos
+ * Traductor
+ *
+ * @author Oscar Granados, Core Pelayo, Jairo Luna
+ * @since 01/09/2016
+ * @version 1
+ */
+
 public class Problema4{
     
      static Scanner in = new Scanner(System.in);
