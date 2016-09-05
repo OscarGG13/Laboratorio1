@@ -1,0 +1,34 @@
+	TALLER 1
+
+PROGRAMACION ORIENTADA A OBJETOS
+
+	Oscar Granados
+	Core Pelayo
+	Jairo Luna 
+
+Problemas 1 (Explicaciones)
+
+
+a)	El diagrama de flujo nos muestra la ejecución de un programa el cual
+	contiene dos funciones denominadas func1 y func2, estan seran llamadas
+	desde el main del programa.
+	En el main se ejecutara un primer mensaje, despues de esto hara el llamado
+	a la funcion func1 y ejecutara un mensaje alojada en dicha funcion, terminara
+	de ejecutar func1 y regrsara al main, despues de esto se realizara el llamado a
+	func2 y ejecutara el siguiente mensaje, regresara al main y terminara el programa.     
+
+
+b)	El diagrama de flujo es sobre un juego de adivinanza de numeros del 0 al 100, inicia
+	en el main y declara una variable asignando un valor inicial, se crea un bucle y 
+	dependiendo el valor dado en la variable inicial se ejecutara, al ingresar al bucle
+	hara el llamado a la funcion GuessingGame(), en esta funcion declara variables e 
+	iniciara un nuevo bucle, la tarea del bucle es tomar del numero del ususario y 
+	comparar si es el numero generado por la maquina, dependiendo el numero ingresado 
+	se ejecutara varios condicionales donde indicara si el numero ingresado es mayor o
+	al numero ganador, si en 7 intentos no se acierta se cerrara el bucle y se dara como
+	perdedor, caso contrario como ganador, despues de salir de la funcion GuessingGame(),
+	regresara al main y preguntara si desea otra oportunidad, si es afirmativo la 
+	respuesta se reinicia el programa, caso contrario se finaliza el main y termina el
+	programa.
+
+
