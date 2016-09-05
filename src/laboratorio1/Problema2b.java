@@ -1,5 +1,15 @@
 package laboratorio1;
 
+/**
+ *Universidad Nacional de Colombia
+ * Programacion Orientada a objetos
+ * Estadistico revista - Daily life magazine
+ *
+ * @author Oscar Granados, Core Pelayo, Jairo Luna
+ * @since 01/09/2016
+ * @version 2
+ */
+
 import java.util.Scanner;
 
 
@@ -7,7 +17,7 @@ public class Problema2b{
     
     public static void main(String[] args) {
         
-        System.out.println("Daily Life Magazine");
+        System.out.println("DAILY LIFE MAGAZINE");
         data();
         
     }
@@ -28,16 +38,17 @@ public class Problema2b{
         
         while(true){
             if(opci.charAt(0) != 'y'){
-                System.out.println("Hasta luego");
+                System.out.println("FIN");
                 break;
             }else{
-                System.out.println("Selecciona la opcion a ejecutar: ");
+                System.out.println("MENU: ");
+                System.out.print("Elige la opcion: ")
                 System.out.println("1. Ingresar datos ");
                 System.out.println("2. Mostrar estadistica de lectores por grupos de edad");
                 System.out.println("3. Mostrar estadistica de lectores por genero y edad");
                 System.out.println("4. Mostrar estadistica de lectores por ingresos anuales");
                 System.out.println("5. Salir");
-                System.out.print("Digita a continuacion la opcion: ");
+                
                 Scanner o = new Scanner(System.in);
                 opc = o.nextInt();
                 switch(opc){
@@ -111,7 +122,7 @@ public class Problema2b{
                         break;
                     
                     case(2):
-                        System.out.println("Analisis de informacion por grupos de edad");
+                        System.out.println("Informacion por grupos de edad");
                         System.out.println("Numero de lectores menores de 20 años: " + grupoedad[0]);
                         System.out.println("Numero de lectores entre 20 y 29 años: " + grupoedad[1]);
                         System.out.println("Numero de lectores entre 30 y 39 años: " + grupoedad[2]);
@@ -122,7 +133,7 @@ public class Problema2b{
                         break;
                     
                     case(3):
-                        System.out.println("Analisis de informacion por genero y edad");
+                        System.out.println("Informacion por genero y edad");
                         System.out.println("Numero de lectores menores de 20 años masculinos: " + grupogenerom[0]);
                         System.out.println("Numero de lectores menores de 20 años femeninos: " + grupogenerof[0]);
                         System.out.println("Numero de lectores entre 20 y 29 años masculinos: " + grupogenerom[1]);
@@ -138,7 +149,7 @@ public class Problema2b{
                         break;
                         
                     case(4):
-                        System.out.println("Analisis de informacion por ingresos anuales: ");
+                        System.out.println("Informacion por ingresos anuales: ");
                         System.out.println("Numero de lectores con ingresos menores a $30000: " + grupoingresos[0]);
                         System.out.println("Numero de lectores con ingresos entre $30000 y $49999: " + grupoingresos[1]);
                         System.out.println("Numero de lectores con ingresos entre $50000 y $69999: " + grupoingresos[2]);
