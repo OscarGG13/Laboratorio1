@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio1;
 import java.util.Scanner;
 
 /**
+ *Universidad Nacional de Colombia
+ * Programacion Orientada a objetos
+ * Aplicacion Cine
  *
- * @author HP-PC
+ * @author Oscar Granados, Core Pelayo, Jairo Luna
+ * @since 01/09/2016
+ * @version 1
  */
 public class Problema5{
     public static boolean salir=false;
@@ -72,15 +72,16 @@ public class Problema5{
     
     public static int ventaTarjeta(int[][] tarjetas ,int totalTarjetas)
     {
-        System.out.println("Valor a pagar 70.000");
-        System.out.println("Ingrese numero de cedula del cliente");
+        System.out.println("Valor venta : 70.000$");
+        System.out.println("Numero c/c cliente: ");
         Scanner in= new Scanner(System.in);
         int cedula=in.nextInt();
         tarjetas[totalTarjetas][0]=cedula;
         tarjetas[totalTarjetas][1]=70000;
         totalTarjetas++;
         return totalTarjetas;
-    }
+    }//fin ventaTarjeta
+    
     public static int  buscar_tarjeta(int[][] tarjetas ,int totalTarjetas ,int cedula)
     {
         int idx=-1;
@@ -93,16 +94,18 @@ public class Problema5{
             }   
         }
         return idx;
-    }
+    } //fin buscar_tarjeta
+    
     public static void recargaTarjeta(int[][] tarjetas,int totalTarjetas)
     {
-        System.out.println("Valor a recargar 50.000");
-        System.out.println("Ingrese numero de cedula del cliente");
+        System.out.println("Valor recarga: 50.000");
+        System.out.println("Numero c/c cliente: ");
         Scanner in= new Scanner(System.in);
         int cedula=in.nextInt();
         int idx=buscar_tarjeta(tarjetas,totalTarjetas,cedula);
         tarjetas[idx][1]+=50000;
-    }
+    }//fin recargaTarjeta
+    
     public static void descontarTarjeta(int codigo,int[][] tarjetas,int totalTarjetas,int valor)
     {
         for(int i=0;i<totalTarjetas;i++)
@@ -113,25 +116,25 @@ public class Problema5{
                 break;
             }
         }
-    }
+    }//fin descontarTarjeta
 
     public static int crearReserva(int[][] sillas, int[][] reservas,int totalReservas)
     {
         String fila;
         int columna;
-        System.out.println("Ingrese numero de cedula del cliente");
+        System.out.println("Digite numero c/c cliente: ");
         Scanner in= new Scanner(System.in);
         int cedula=in.nextInt();
-        System.out.println("Ingrese el numero de sillas");
+        System.out.println("¿Cantidad de sillas?");
         in= new Scanner(System.in);
         int nSillas=in.nextInt();
         int valorTotal=0;
         for(int i=0;i<nSillas;i++)
         {
-            System.out.println("Ingrese la fila a reservar");
+            System.out.println("Ingrese la fila deseada");
             in= new Scanner(System.in);
             fila=in.next();
-            System.out.println("Ingrese la columna");
+            System.out.println("Ingrese la columna deseada");
             in= new Scanner(System.in);
             columna=in.nextInt();
             columna--;
@@ -175,7 +178,7 @@ public class Problema5{
                     filaEntero=10;
                     valor=11000;
                     break;
-            }
+            } //switch case 
             if(sillas[filaEntero][columna]==0)
             {
                 sillas[filaEntero][columna]=cedula;
@@ -183,17 +186,18 @@ public class Problema5{
             }
             else
             {
-                System.out.println("silla ocupada");
+                System.out.println("Puesto no disponible");
                 i--;
             }
-        }
+        }// FIN ciclo for
         reservas[totalReservas][0]=cedula;
         reservas[totalReservas][1]=nSillas;
         reservas[totalReservas][2]=valorTotal;
         System.out.println("Codigo de reserva: "+totalReservas);
         totalReservas++;
         return totalReservas;
-    }
+    }//crearRESERVA
+    
     public static int pagarReserva(int[][] reservas,int totalReservas,int[][] ventas,int totalVentas,int[][] tarjetas,int totalTarjetas)
     {
         System.out.println("pagar por:");
@@ -216,7 +220,8 @@ public class Problema5{
             return pagarReservaNumero(reservas,totalReservas,ventas,totalVentas,numero,tarjetas,totalTarjetas);
         }
         return totalVentas;
-    }
+    }//pagarReserva
+    
     public static int pagarReservaCodigo(int[][] reservas,int totalReservas,int[][] ventas,int totalVentas, int codigo,int[][] tarjetas,int totalTarjetas)
     {
         System.out.println("Detalles del pago:");
@@ -243,7 +248,8 @@ public class Problema5{
             totalVentas++;
         }
         return totalVentas;
-    }
+    }//pagarReservaCodigo
+    
     public static int pagarReservaNumero(int[][] reservas,int totalReservas,int[][] ventas,int totalVentas, int numero,int[][] tarjetas,int totalTarjetas)
     {      
         int codigo=0;
@@ -256,7 +262,8 @@ public class Problema5{
             }
         }
         return pagarReservaCodigo(reservas,totalReservas,ventas,totalVentas,codigo,tarjetas, totalTarjetas);
-    }
+    }//pagarReservaNumero
+    
     public static void cancelarReserva(int[][] reservas,int totalReservas,int[][] sillas)
     {
         System.out.println("cancelar por:");
@@ -278,7 +285,8 @@ public class Problema5{
             int numero=in.nextInt();
             cancelarReservaNumero(reservas,totalReservas,sillas,numero);
         }    
-    }
+    }//cancelarReserva
+    
     public static void cancelarReservaCodigo(int[][] reservas,int[][] sillas, int codigo)
     {   
         int sillasLiberadas=0;
@@ -304,7 +312,8 @@ public class Problema5{
         reservas[codigo][0]=0;
         reservas[codigo][1]=0;
         reservas[codigo][2]=0;
-    }
+    }//cancelarReservaCodigo
+    
     public static void cancelarReservaNumero(int[][] reservas,int totalReservas,int[][] sillas,int numero)
     {      
         int codigo=0;
@@ -317,7 +326,9 @@ public class Problema5{
             }
         }
         cancelarReservaCodigo(reservas,sillas,codigo);
-    }
+    }//cancelarReservaNumero
+    
+    
     public static int ventaBoleta_SinReser(int[][] sillas,int[][] ventas,int totalVentas,int[][] tarjetas,int totalTarjetas)
     {
         int [] venta= new int[3];
@@ -393,7 +404,7 @@ public class Problema5{
                 System.out.println("silla ocupada");
                 i--;
             }
-        }
+        } //ciclo for
         venta[2]=valorTotal;
         System.out.println("Valor Total: "+venta[2]);
         System.out.println("tipo de pago:");
@@ -429,6 +440,7 @@ public class Problema5{
         totalVentas++;
         return totalVentas;
     }//ventaBoleta_SinReserEfect
+    
     public static int ventaBoleta_SinReserTarj(int[] venta,int[][] sillasUtilizadas,int[][] sillas,int[][] ventas,int totalVentas,int[][] tarjetas,int totalTarjetas)
     {      
         for(int i=0;i<venta[1];i++)
@@ -446,6 +458,7 @@ public class Problema5{
         }
         return totalVentas;
     }//ventaBoleta_SinReserTarj
+    
     public static void total_Dinero_Boletas(int[][] ventas,int totalVentas)
     {
         int Total=0;
@@ -454,6 +467,7 @@ public class Problema5{
         }
         System.out.println("Total de ventas: "+Total);
     }//total_Dinero_Boletas
+    
     public static void menu()
     {
         System.out.println("---------- MENU----------");
