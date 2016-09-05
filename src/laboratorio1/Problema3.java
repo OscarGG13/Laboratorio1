@@ -2,6 +2,16 @@ package laboratorio1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *Universidad Nacional de Colombia
+ * Programacion Orientada a objetos
+ * Aplicacion Tienda Libros
+ *
+ * @author Oscar Granados, Core Pelayo, Jairo Luna
+ * @since 30/08/2016
+ * @version 1
+ */
+
 
 public class Problema3{
     
