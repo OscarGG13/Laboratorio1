@@ -2,8 +2,14 @@
 package laboratorio1;
 
 /**
- *
- * @author oscar
+ * Universidad Nacional de Colombia- Bogotá
+ * Programacion orientada a objetos
+ * 
+ * Ejercicio Funciones
+ * 
+ * @autor Oscar Granados, Core Pelayo, Jairo Luna
+ * @version 3.0
+ * @since 01/09/2016
  */
 public class Problema1a {
     
@@ -23,7 +29,4 @@ public class Problema1a {
     void func2(){
         	System.out.println("Tercera funcion");
 	}
-
-    
-    
 }
